@@ -1,17 +1,48 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div>
+    <div>
+      <label for="name">First Name:</label>
+      <input type="text" v-model="firstName" id="name" />
+    </div>
+    <div>
+      <label for="lastName">Last Name:</label>
+      <input type="text" v-model="lastName" id="lastName" />
+    </div>
+    <div>
+      <label for="email">Email :</label>
+      <input type="text" v-model="email" id="email" />
+    </div>
+  </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import { useVuelidate } from "@vuelidate/core";
+import { required, email } from "@vuelidate/validators";
 
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
-}
+  name: "App",
+  setup() {
+    return { v$: useVuelidate() };
+  },
+  data() {
+    return {
+      firstName: "",
+      lastName: "",
+      contact: {
+        email: "",
+      },
+    };
+  },
+  validations() {
+    return {
+      firstName: { required },
+      lastName: { required },
+      const: {
+        email: { require, email },
+      },
+    };
+  },
+};
 </script>
 
 <style>
