@@ -12,6 +12,9 @@
       <label for="email" class="form-label">Email :</label>
       <input type="text" v-model="email" id="email" class="form-text"/>
     </div>
+    <div>
+      <vue-tel-input v-model="phone" :dropdownOptions="dropdownOptions" :inputOptions="inputOptions"></vue-tel-input>
+    </div>
   </form>
 </template>
 
@@ -31,6 +34,17 @@ export default {
       contact: {
         email: "",
       },
+      phone:null,
+      dropdownOptions:{
+        showDialCodeInSelection:true,
+        showFlags:true,
+        showSearchBox:true
+      },
+      inputOptions:{
+        autofocus: true,
+        showDailCode:true,
+        placeholder:'Enter Mobile Number'
+      }
     };
   },
   validations() {
