@@ -1,18 +1,18 @@
 <template>
-  <div>
-    <div>
-      <label for="name">First Name:</label>
-      <input type="text" v-model="firstName" id="name" />
+  <form @action="javascript:void(0);" class="form-control">
+    <div >
+      <label for="name" class="form-label">First Name:</label>
+      <input type="text" v-model="firstName" id="name" class="form-text"/>
     </div>
     <div>
-      <label for="lastName">Last Name:</label>
-      <input type="text" v-model="lastName" id="lastName" />
+      <label for="lastName" class="form-label">Last Name:</label>
+      <input type="text" v-model="lastName" id="lastName" class="form-text"/>
     </div>
     <div>
-      <label for="email">Email :</label>
-      <input type="text" v-model="email" id="email" />
+      <label for="email" class="form-label">Email :</label>
+      <input type="text" v-model="email" id="email" class="form-text"/>
     </div>
-  </div>
+  </form>
 </template>
 
 <script>
